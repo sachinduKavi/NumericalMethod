@@ -1,16 +1,24 @@
+import sys
+
+sys.setrecursionlimit(15000)
 class Euler:
-    def __init__(self, h):
+    def __init__(self, h, formula, baseLevel, baseValue):
         self.h = h
+        self.formula = formula
+        self.baseLevel = baseLevel
+        self.baseValue = baseValue
+
+    def numericalMethod(self, n):
+        if(n == self.baseLevel):
+            return self.baseValue
+               
+        return self.numericalMethod(n-1) + self.h * self.formula(n-1)
     
 
-    def numericalMethod(n):
-        return numericalMethod(n-1) + self.h*
-    
-    def solveEquation(position, firstValue):
-        print('Hello WOrld')
-
-
-
+# This is the differential function
+def fn(x):
+    return x*x
 
 if(__name__ == '__main__'):
-    eular = Eular(2)
+    euler = Euler(2, fn, 0, 1)
+    print(euler.numericalMethod(10000))
