@@ -1,10 +1,10 @@
 class Euler:
-    def __init__(h):
+    def __init__(self, h):
         self.h = h
     
 
     def numericalMethod(n):
-        pass
+        return numericalMethod(n-1) + self.h*
     
     def solveEquation(position, firstValue):
         print('Hello WOrld')
